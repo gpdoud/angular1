@@ -1,0 +1,48 @@
+<!-- HTML Sample -->
+
+	<p>1 + 2 = {{1+2}}</p>
+
+	<p>{{ctrl.about}}</p>
+	<p><span ng-bind="ctrl.about"></span></p>
+
+	<ul>
+		<li ng-repeat="name in ctrl.names"><span ng-bind="name"></span>
+	</ul>
+
+	<p />
+	<table>
+		<tr ng-repeat="technology in ctrl.technologies">
+			<td>Company:</td><td>{{technology.Company}}</td>
+			<td>Software:</td><td>{{technology.Software}}</td>
+		</tr>
+	</table>
+	<p />
+	<div>
+		<span>Type something in this box:</span>
+		<input type="text" ng-model="ctrl.echo"></input>
+		<br />
+		<span> and it displays in this box.</span>
+		<input type="text" ng-model="ctrl.echo"></label>
+		<br />
+		<span> click this button and both will change </span>
+		<button ng-click="ctrl.UpdateEcho('Hi Dan!')">Update Echo</button>
+	</div>
+	<p />
+	<span>Click this button =></span>
+	<button ng-click="ctrl.PopUp('Hello, world!')">Click me</button>
+
+	<!-- Angular Controller samples -->
+		self.names = ["Daniel", "Alex", "Pierson", "Greg", "Lisa"];
+	self.technologies = [
+		{ Company: 'Microsoft', Software: 'Visual Studio.net' }
+		,{ Company: 'Microsoft', Software: 'SQL Server' }
+		,{ Company: 'Amazon', Software: 'AWS' }
+		,{ Company: 'Oracle', Software: 'Oracle DB' }
+	];
+	self.echo = "Type something to echo";
+	self.UpdateEcho = function(str) {
+		self.echo = str;
+	}
+	self.PopUp = function(message) {
+		alert(message);
+	}

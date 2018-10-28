@@ -1,23 +1,23 @@
 angular.module("MyApp")
-	.controller("MyController", MyController);
+	.controller("CustomerController", CustomerController);
 
-MyController.$inject = [];
+CustomerController.$inject = ["$http"];
 
-function MyController() {
+function CustomerController($http) {
 	var self = this;
 	self.about = "About My First AngularJS Application";
-	self.names = ["Daniel", "Alex", "Pierson", "Greg", "Lisa"];
-	self.technologies = [
-		{ Company: 'Microsoft', Software: 'Visual Studio.net' }
-		,{ Company: 'Microsoft', Software: 'SQL Server' }
-		,{ Company: 'Amazon', Software: 'AWS' }
-		,{ Company: 'Oracle', Software: 'Oracle DB' }
-	];
-	self.echo = "Type something to echo";
-	self.UpdateEcho = function(str) {
-		self.echo = str;
+
+	self.List = function() {
+		$http.get("http://localhost:50385/api/Customers")
+			.then(
+				function(resp) { // success
+					self.Customers = resp.data;
+					console.log("List Successful", self.Customers);
+				}, 
+				function(err) { // fail
+					console.log("List Failed", err);
+				}
+			);
 	}
-	self.PopUp = function(message) {
-		alert(message);
-	}
+	self.List();
 }

@@ -8,7 +8,7 @@ function MyConfig($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/home-view.html',
-			controller: 'MyController',
+			controller: 'CustomerController',
 			controllerAs: 'ctrl'
 		})
 		.when('/about', {

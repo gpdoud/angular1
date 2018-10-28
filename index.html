@@ -9,40 +9,9 @@
 	<script src="ng/MyApp-MyController-controller.js" type="text/javascript"></script>
 	<script src="ng/MyApp-config.js" type="text/javascript"></script>
 <script lang="javascript">
-	//var app = angular.module("MyApp", []);
 </script>
 </head>
-<body ng-controller="MyController as ctrl">
-	<p>1 + 2 = {{1+2}}</p>
-
-	<p>{{ctrl.about}}</p>
-	<p><span ng-bind="ctrl.about"></span></p>
-
-	<ul>
-		<li ng-repeat="name in ctrl.names"><span ng-bind="name"></span>
-	</ul>
-
-	<p />
-	<table>
-		<tr ng-repeat="technology in ctrl.technologies">
-			<td>Company:</td><td>{{technology.Company}}</td>
-			<td>Software:</td><td>{{technology.Software}}</td>
-		</tr>
-	</table>
-	<p />
-	<div>
-		<span>Type something in this box:</span>
-		<input type="text" ng-model="ctrl.echo"></input>
-		<br />
-		<span> and it displays in this box.</span>
-		<input type="text" ng-model="ctrl.echo"></label>
-		<br />
-		<span> click this button and both will change </span>
-		<button ng-click="ctrl.UpdateEcho('Hi Dan!')">Update Echo</button>
-	</div>
-	<p />
-	<span>Click this button =></span>
-	<button ng-click="ctrl.PopUp('Hello, world!')">Click me</button>
+<body ng-controller="CustomerController as ctrl">
 	<div ng-view></div>
 </body>
 </html>
